@@ -2,7 +2,7 @@ import express from "express"
 import Connection from "./database/db.js";
 import dotenv from "dotenv"
 import Router from "./routes/route.js";
-import path  from "path";
+// import path  from "path";
 
 
 import cors from "cors"
@@ -30,15 +30,16 @@ app.use("/",Router);
 
 
 
-const PORT=process.env.PORT || 8000;
+const PORT=process.env.PORT || 8001;
 
 app.listen(PORT ,()=>{
     console.log(`Server is running on port ${PORT} Sucessfully.`)
 })
 
-const USERNAME=process.env.DB_USERNAME
-const PASSWORD=process.env.DB_PASSWORD
+// const USERNAME=process.env.DB_USERNAME
+// const PASSWORD=process.env.DB_PASSWORD
 
-const URL=process.env.MONGODB_URI || `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.ozniqmf.mongodb.net/test`
+const URL=process.env.MONGODB_URI  
+
 
 Connection(URL);
